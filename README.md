@@ -3,7 +3,7 @@
 * run main.py in order to create an analyzer report as a jsonFile
   - command : python main.py
   
-# upload analyzer.json to localstack
+# Upload analyzer.json to localstack
 
 * run :
   - docker-compose build
