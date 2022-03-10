@@ -1,6 +1,6 @@
 # Json comparison 
 
-* run main.py in order to create an analyzer report as a json
+* run main.py in order to create an analyzer report as a jsonFile
   - command : python main.py
   
 # upload analyzer.json to localstack
