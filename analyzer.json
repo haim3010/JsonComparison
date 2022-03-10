@@ -1,0 +1,311 @@
+{
+  "Counter": {
+    "Matches": 4,
+    "Modifies": 6,
+    "Misses": 1
+  },
+  "Match": [
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:s3::staging/my-bucket",
+        "resource_type": "s3",
+        "name": "my-bucket",
+        "tags": {
+          "totalAmount": "50gb"
+        }
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:s3::staging/my-bucket",
+        "resource_type": "s3",
+        "name": "my-bucket",
+        "tags": {
+          "totalAmount": "50gb"
+        }
+      },
+      "state": "Match",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:s3::staging/my-bucket"
+        }
+      ]
+    },
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:rds::staging/pg-admin",
+        "resource_type": "rds",
+        "db_type": "postgres",
+        "version": "1.2.9",
+        "name": "pg-admin"
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:rds::staging/pg-admin",
+        "resource_type": "rds",
+        "db_type": "postgres",
+        "version": "1.2.9",
+        "name": "pg-admin"
+      },
+      "state": "Match",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:rds::staging/pg-admin"
+        }
+      ]
+    },
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:iam-user::staging/sefi-genis",
+        "resource_type": "iam-user",
+        "name": "sefi-genis",
+        "role": "SRE",
+        "is_deleted": true
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:iam-user::staging/sefi-genis",
+        "resource_type": "iam-user",
+        "name": "sefi-genis",
+        "role": "SRE"
+      },
+      "state": "Match",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:iam-user::staging/sefi-genis"
+        }
+      ]
+    },
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:iam-user::staging/ido-neeman",
+        "resource_type": "iam-user",
+        "name": "ido-neeman",
+        "role": "ADMIN"
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:iam-user::staging/ido-neeman",
+        "resource_type": "iam-user",
+        "name": "ido-neeman",
+        "role": "ADMIN"
+      },
+      "state": "Match",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:iam-user::staging/ido-neeman"
+        }
+      ]
+    }
+  ],
+  "Modified": [
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:s3::staging/my-bucket3",
+        "resource_type": "s3",
+        "name": "my-bucket3",
+        "tags": {
+          "totalAmount": "17kb"
+        }
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:s3::staging/my-bucket3",
+        "resource_type": "s3",
+        "name": "my-bucket3",
+        "tags": {
+          "totalAmount": "22kb"
+        }
+      },
+      "state": "modified",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:s3::staging/my-bucket3",
+          "KeyName": "tags",
+          "CloudValue": {
+            "totalAmount": "17kb"
+          },
+          "IacValue": {
+            "totalAmount": "22kb"
+          }
+        }
+      ]
+    },
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:rds::staging/main-db",
+        "resource_type": "rds",
+        "db_type": "mysql",
+        "version": "1.2.3",
+        "name": "main-db"
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:rds::staging/main-db",
+        "resource_type": "rds",
+        "db_type": "mysql",
+        "version": "1.2.4",
+        "name": "main-db"
+      },
+      "state": "modified",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:rds::staging/main-db",
+          "KeyName": "version",
+          "CloudValue": "1.2.3",
+          "IacValue": "1.2.4"
+        }
+      ]
+    },
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:lambda::staging/my-function",
+        "resource_type": "lambda",
+        "name": "my-function",
+        "handler": "index.py/main",
+        "runtime": "python3"
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:lambda::staging/my-function",
+        "resource_type": "lambda",
+        "name": "my-function",
+        "handler": "index.go/main",
+        "runtime": "golang1.x"
+      },
+      "state": "modified",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:lambda::staging/my-function",
+          "KeyName": "handler",
+          "CloudValue": "index.py/main",
+          "IacValue": "index.go/main"
+        },
+        {
+          "id": "arn:aws:lambda::staging/my-function",
+          "KeyName": "runtime",
+          "CloudValue": "python3",
+          "IacValue": "golang1.x"
+        }
+      ]
+    },
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:iam-user::staging/roy-tal",
+        "resource_type": "iam-user",
+        "name": "roy-tal",
+        "role": "SRE"
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:iam-user::staging/roy-tal",
+        "resource_type": "iam-user",
+        "name": "roy-tal",
+        "role": "ADMIN"
+      },
+      "state": "modified",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:iam-user::staging/roy-tal",
+          "KeyName": "role",
+          "CloudValue": "SRE",
+          "IacValue": "ADMIN"
+        }
+      ]
+    },
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:alb::staging/frontend-loadbalancer",
+        "resource_type": "alb",
+        "name": "frontend-loadbalancer",
+        "network_interface": "internal"
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:alb::staging/frontend-loadbalancer",
+        "resource_type": "alb",
+        "name": "frontend-loadbalancer",
+        "network_interface": "private"
+      },
+      "state": "modified",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:alb::staging/frontend-loadbalancer",
+          "KeyName": "network_interface",
+          "CloudValue": "internal",
+          "IacValue": "private"
+        }
+      ]
+    },
+    {
+      "CloudResourceItem": {
+        "id": "arn:aws:subnet::staging/public-subnet",
+        "resource_type": "subnet",
+        "name": "public-subnet",
+        "outbound": {
+          "cidr": "0.0.0.0/0",
+          "protocol": -1,
+          "port": "*"
+        },
+        "inbound": {
+          "cidr": "0.0.0.0/0",
+          "protocol": -1,
+          "port": "*"
+        }
+      },
+      "IacResourceItem": {
+        "id": "arn:aws:subnet::staging/public-subnet",
+        "resource_type": "subnet",
+        "name": "public-subnet",
+        "outbound": {
+          "cidr": "0.0.0.0/0",
+          "protocol": "tcp",
+          "fromPort": 0,
+          "toPort": 65535
+        },
+        "inbound": {
+          "cidr": "0.0.0.0/0",
+          "protocol": "tcp",
+          "fromPort": 0,
+          "toPort": 65535
+        }
+      },
+      "state": "modified",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:subnet::staging/public-subnet",
+          "KeyName": "outbound",
+          "CloudValue": {
+            "cidr": "0.0.0.0/0",
+            "protocol": -1,
+            "port": "*"
+          },
+          "IacValue": {
+            "cidr": "0.0.0.0/0",
+            "protocol": "tcp",
+            "fromPort": 0,
+            "toPort": 65535
+          }
+        },
+        {
+          "id": "arn:aws:subnet::staging/public-subnet",
+          "KeyName": "inbound",
+          "CloudValue": {
+            "cidr": "0.0.0.0/0",
+            "protocol": -1,
+            "port": "*"
+          },
+          "IacValue": {
+            "cidr": "0.0.0.0/0",
+            "protocol": "tcp",
+            "fromPort": 0,
+            "toPort": 65535
+          }
+        }
+      ]
+    }
+  ],
+  "Missing": [
+    {
+      "CloudResourceItem": {},
+      "IacResourceItem": {},
+      "state": "Missing",
+      "ChangeLog": [
+        {
+          "id": "arn:aws:s3::staging/my-bucket2",
+          "KeyName": "my-bucket2"
+        }
+      ]
+    }
+  ]
+}

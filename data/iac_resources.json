@@ -1,0 +1,66 @@
+[
+    {
+        "id": "arn:aws:s3::staging/my-bucket",
+        "resource_type": "s3",
+        "name": "my-bucket",
+        "tags": {"totalAmount": "50gb"}
+    },
+    {
+        "id": "arn:aws:s3::staging/my-bucket3",
+        "resource_type": "s3",
+        "name": "my-bucket3",
+        "tags": {"totalAmount": "22kb"}
+    },
+    {
+        "id": "arn:aws:rds::staging/main-db",
+        "resource_type": "rds",
+        "db_type": "mysql",
+        "version": "1.2.4",
+        "name": "main-db"
+    },
+    {
+        "id": "arn:aws:rds::staging/pg-admin",
+        "resource_type": "rds",
+        "db_type": "postgres",
+        "version": "1.2.9",
+        "name": "pg-admin"
+    },
+    {
+        "id": "arn:aws:lambda::staging/my-function",
+        "resource_type": "lambda",
+        "name": "my-function",
+        "handler": "index.go/main",
+        "runtime": "golang1.x"
+    },
+    {
+        "id": "arn:aws:iam-user::staging/roy-tal",
+        "resource_type": "iam-user",
+        "name": "roy-tal",
+        "role": "ADMIN"
+    },
+    {
+        "id": "arn:aws:iam-user::staging/sefi-genis",
+        "resource_type": "iam-user",
+        "name": "sefi-genis",
+        "role": "SRE"
+    },
+    {
+        "id": "arn:aws:iam-user::staging/ido-neeman",
+        "resource_type": "iam-user",
+        "name": "ido-neeman",
+        "role": "ADMIN"
+    },
+    {
+        "id": "arn:aws:alb::staging/frontend-loadbalancer",
+        "resource_type": "alb",
+        "name": "frontend-loadbalancer",
+        "network_interface": "private"
+    },
+    {
+        "id": "arn:aws:subnet::staging/public-subnet",
+        "resource_type": "subnet",
+        "name": "public-subnet",
+        "outbound": {"cidr": "0.0.0.0/0", "protocol": "tcp", "fromPort": 0, "toPort": 65535},
+        "inbound": {"cidr": "0.0.0.0/0", "protocol": "tcp", "fromPort": 0, "toPort": 65535}
+    }
+]

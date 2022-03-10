@@ -1,0 +1,35 @@
+version: '3.2'
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack
+    ports:
+      - '4563-4599:4563-4599'
+      - '8055:8080'
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+    volumes:
+      - './.localstack:/tmp/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
+  python:
+    build: .
+    container_name: pythoncode
+    links:
+       - "localstack:localstack"
+    environment:
+       - LOCALSTACK_ENDPOINT_URL="http://10.5.0.5:4566/"
+    networks:
+       vpcbr:
+         ipv4_address: 10.5.0.6
+networks:
+ vpcbr:
+   driver: bridge
+   ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
